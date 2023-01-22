@@ -1,11 +1,12 @@
 def findMagic(n):
     numberSum = sum(n)
-    if numberSum < 10:
-        return numberSum
+    n1 = numberSum % 10
+    n2 = numberSum // 10
+    sumNumber = n1 + n2
+    if sumNumber >= 10:
+        return findMagic(sumNumber)
     else:
-        n1 = numberSum % 10
-        n2 = numberSum // 10
-        return n1 + n2
+        return sumNumber
 
         
 def sum(n):
@@ -16,4 +17,4 @@ def sum(n):
     return sum
     
 n = 1995
-print(findMagic(n))
+print(findMagic(742839204983789) )
